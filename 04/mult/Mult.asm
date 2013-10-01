@@ -7,3 +7,22 @@
 // (R0, R1, R2 refer to RAM[0], RAM[1], and RAM[3], respectively.)
 
 // Put your code here.
+@2
+M=0 // set M[3] to zero
+(START)
+   @0
+   D=M
+   @END
+   D,JEQ
+   @1
+   D=M
+   @2
+   M=D+M
+   @0
+   M=M-1
+   @START
+   0;JMP
+(END)
+   @END
+   0;JMP
+
