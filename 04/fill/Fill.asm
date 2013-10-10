@@ -11,14 +11,15 @@
 // Put your code here.
 @R0
 M=0
-@LOOP
+@LOOPKBD
 0,JMP
 (BLACK)
-@size
+@R1
 M=-1
 @DRAW8k
 0,JMP
 (WHITE)
+@R1
 M=0
 (DRAW8k)
 @R0
@@ -30,12 +31,13 @@ M=-1
 M=M+1
 @10
 D=A
+@R0
+D=D-M
 @END
-D,JEQ
+D,JLE
 (LOOPKBD)
 @BLACK
 0,JMP
-@BLACK
 (END)
    @END
    0,JMP
